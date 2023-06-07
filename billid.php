@@ -28,7 +28,7 @@ if ($result === false) {
     $billid = $row['newbillid'];
     echo json_encode(array(
         "status" => "success",
-        "billId" => $billid
+        "billId" => $billid + 1
     ));
 }
 
