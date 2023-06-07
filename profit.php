@@ -15,7 +15,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT (SELECT SUM(cost_price * quantity) FROM stocks) - (SELECT SUM(total_amount) FROM bills) AS profit;";
+$sql = "SELECT (SELECT SUM(total_amount) FROM bills) - (SELECT SUM(cost_price * quantity) FROM stocks) AS profit;";
 $result = $conn->query($sql);
 
 if ($result === false) {
