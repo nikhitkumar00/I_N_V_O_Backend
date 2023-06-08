@@ -14,7 +14,7 @@ if ($conn->e) {
     die("Connection failed: " . $conn->e);
 }
 
-$sql = "SELECT * FROM bills";
+$sql = "SELECT * FROM bills ORDER BY bill_id DESC";
 $result = $conn->query($sql);
 
 $data = array();
