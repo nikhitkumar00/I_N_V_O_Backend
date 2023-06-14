@@ -10,8 +10,8 @@ $dbname = "invo";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-if ($conn->e) {
-    die("Connection failed: " . $conn->e);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
 $sql = "SELECT item_id, name, expiry_date FROM stocks WHERE expiry_date BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 1 MONTH);";

@@ -12,8 +12,8 @@ $billId = $_GET['billId'];
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-if ($conn->e) {
-    die("Connection failed: " . $conn->e);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
 $sql = "SELECT name,bill_quantity,amount from bill_items join stocks on bill_items.item_id = stocks.item_id where bill_id = $billId";
